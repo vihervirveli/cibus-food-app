@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  border: 0;
+  text-align: center;
+}
+
+.cibus-food-app {
+  background-color: #b5bec6;
+}
+
+.content {
+  background-color: #364652;
+  width: 80%;
+  height: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recipe-list {
+  background-color: #bfb1c1;
+  width: 40%;
+  height: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+.recipe-list-title {
+  padding-bottom: 20px;
+}
+
+.recipe {
+  background-color: #c7dbe6;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  border: #282c34;
+  padding: 10px;
+  border-radius: 15px;
+}
