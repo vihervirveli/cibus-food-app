@@ -8,7 +8,14 @@ export const Content = () => {
       index: 1,
       title: 'Roasted chickpeas',
       time: 30,
-      ingredients: [],
+      ingredients: [
+        'chick pea',
+        'vegetable oil',
+        'ginger paste',
+        'garam masala',
+        'cumin',
+        'salt'
+      ],
       instructions:
         'Place on oven tray, slather with oil and sprinkle on the spices. Bake for 15 minutes in 200 °C / 392 F',
       ratings: 5,
@@ -18,7 +25,14 @@ export const Content = () => {
       index: 2,
       title: 'Dipped vegetables',
       time: 30,
-      ingredients: [],
+      ingredients: [
+        'dip',
+        'sour cream',
+        'paprica',
+        'cucumber',
+        'carrot',
+        'zucchini'
+      ],
       instructions:
         'Make the dip and put in the fridge. Cut up all vegetables. Dip vegetables in dip.',
       ratings: 3,
