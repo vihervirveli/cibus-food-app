@@ -11,7 +11,7 @@ export const RecipeList: React.FC<RecipeListProps> = ({ foods }) => {
     <div className="recipe-list">
       <h2 className="recipe-list-title">Recipes</h2>
       {foods.map((food) => {
-        return <Recipe food={food} />;
+        return <Recipe food={food} key={food.index} />;
       })}
     </div>
   );
