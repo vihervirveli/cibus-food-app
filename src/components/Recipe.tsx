@@ -7,12 +7,16 @@ interface RecipeProps {
 
 export const Recipe: React.FC<RecipeProps> = ({ food }) => {
   return (
-    <div className="recipe">
-      <div>{food.title}</div>
-      <div>{food.time} minutes</div>
-      <div>{food.instructions}</div>
-      <div>Rating: {food.ratings}</div>
-      <div>{food.tags.join(', ')}</div>
+    <div className='recipe'>
+      <h4 className='recipe-title'>{food.title}</h4>
+      <div className='recipe-time'>{food.time} min</div>
+      <div className='recipe-preview'>
+        <div className='recipe-preview-info'>
+          <div>Rating: {food.ratings}</div>
+          <div>tags: {food.tags.join(', ')}</div>
+        </div>
+        <div className='recipe-preview-pic'></div>
+      </div>
     </div>
   );
 };

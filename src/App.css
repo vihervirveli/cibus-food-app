@@ -8,22 +8,26 @@
   background-color: #b5bec6;
 }
 
+.banner {
+  padding: 10px 0;
+}
+
 .content {
   background-color: #364652;
-  width: 80%;
-  height: 900px;
+  height: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .recipe-list {
+  padding-top: 20px;
+}
+
+.recipe-list-content {
   background-color: #bfb1c1;
-  width: 40%;
-  /* height: 80%; */
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
-  /* margin-bottom: 20px; */
   padding-top: 10px;
   padding-bottom: 20px;
   border-radius: 15px;
@@ -34,11 +38,31 @@
 
 .recipe {
   background-color: #c7dbe6;
-  width: 60%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
   border: #282c34;
   padding: 10px;
   border-radius: 15px;
+  filter: drop-shadow(10px 5px 4px rgb(70, 69, 69));
+}
+
+.recipe-title {
+  color: #30383d;
+}
+
+.recipe-preview {
+  display: grid;
+  grid-template-columns: 80% 1fr;
+}
+
+.recipe-preview-info div {
+  text-align: left;
+}
+
+.recipe-preview-pic {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(84, 90, 90);
 }
