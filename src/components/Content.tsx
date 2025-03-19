@@ -9,12 +9,25 @@ export const Content = () => {
       title: 'Roasted chickpeas',
       time: 30,
       ingredients: [
-        'chick pea',
-        'vegetable oil',
-        'ginger paste',
-        'garam masala',
-        'cumin',
-        'salt'
+        {
+          amount: '3 dl',
+          ingredient: 'chick pea'
+        },
+        {
+          amount: 'sprinkle',
+          ingredient: 'vegetable oil'
+        },
+        {
+          amount: 'sprinkle',
+          ingredient: 'ginger paste'
+        },
+
+        { amount: 'sprinkle', ingredient: 'garam masala' },
+        { amount: 'sprinkle', ingredient: 'cumin' },
+        {
+          amount: 'sprinkle',
+          ingredient: 'salt'
+        }
       ],
       instructions:
         'Place on oven tray, slather with oil and sprinkle on the spices. Bake for 15 minutes in 200 °C / 392 F',
@@ -26,12 +39,21 @@ export const Content = () => {
       title: 'Dipped vegetables',
       time: 30,
       ingredients: [
-        'dip',
-        'sour cream',
-        'paprica',
-        'cucumber',
-        'carrot',
-        'zucchini'
+        {
+          amount: '1 bag',
+          ingredient: 'dip'
+        },
+        {
+          amount: '200g',
+          ingredient: 'sour cream'
+        },
+        {
+          amount: '1',
+          ingredient: 'paprica'
+        },
+        { amount: '1', ingredient: 'cucumber' },
+        { amount: '2', ingredient: 'carrot' },
+        { amount: '1', ingredient: 'zucchini' }
       ],
       instructions:
         'Make the dip and put in the fridge. Cut up all vegetables. Dip vegetables in dip.',
@@ -41,7 +63,7 @@ export const Content = () => {
   ];
 
   return (
-    <div className="content">
+    <div className='content'>
       <RecipeList foods={foods} />
     </div>
   );

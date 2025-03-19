@@ -4,6 +4,10 @@ Recipe App using React+Typescript
 
 ## Progress
 
+### March 19, 2025
+
+Added media queries for pad and desktop. Desktop uses column layout for the recipes, the others rows.
+
 ### March 18, 2025
 
 Switched to Mobile first thinking. Decided to make the recipe components appear as previews initially.
