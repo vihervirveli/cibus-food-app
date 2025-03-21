@@ -4,6 +4,12 @@ Recipe App using React+Typescript
 
 ## Progress
 
+### March 21, 2025
+
+Switched to using Material UI
+
+![3rd Progress](src/screenshots/3Progress.png)
+
 ### March 19, 2025
 
 Added media queries for pad and desktop. Desktop uses column layout for the recipes, the others rows.
