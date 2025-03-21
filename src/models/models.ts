@@ -7,6 +7,7 @@ export type RecipeType = {
   index: number;
   title: string;
   time: number;
+  preview: string;
   ingredients: RecipeIngredientType[];
   instructions: string;
   ratings: number;

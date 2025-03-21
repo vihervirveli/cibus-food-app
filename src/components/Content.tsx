@@ -8,6 +8,8 @@ export const Content = () => {
       index: 1,
       title: 'Roasted chickpeas',
       time: 30,
+      preview:
+        'This dish is easy to make and is a great side dish to add bulk to a meal',
       ingredients: [
         {
           amount: '3 dl',
@@ -38,6 +40,7 @@ export const Content = () => {
       index: 2,
       title: 'Dipped vegetables',
       time: 30,
+      preview: 'Great for snacking in a more healthy way and to get more fiber',
       ingredients: [
         {
           amount: '1 bag',
