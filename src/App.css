@@ -36,6 +36,10 @@
   padding-bottom: 20px;
 }
 
+.recipe-container {
+  height: 100%;
+}
+
 .recipe {
   background-color: #c7dbe6;
   width: 80%;

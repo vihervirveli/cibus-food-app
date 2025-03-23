@@ -61,64 +61,70 @@ export const Recipe: React.FC<RecipeProps> = ({ food }) => {
     return `${hours} hr ${minutes}min`;
   };
   return (
-    <Card>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label='recipe'>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label='settings'>
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title={food.title}
-        subheader={calculateOutputTime()}
-      />
-      <CardMedia
-        component='img'
-        height='194'
-        image='https://mui.com/static/images/cards/paella.jpg'
-        alt={food.title}
-      />
-      <CardContent>
-        <Typography variant='body2' sx={{ color: 'text.secondary' }}>
-          {food.preview}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label='add to favorites'>
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label='share'>
-          <ShareIcon />
-        </IconButton>
-
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label='show more'
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout='auto' unmountOnExit>
+    <div className='recipe-container'>
+      <Card>
+        <CardHeader
+          avatar={
+            <Avatar sx={{ bgcolor: red[500] }} aria-label='recipe'>
+              R
+            </Avatar>
+          }
+          action={
+            <IconButton aria-label='settings'>
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title={food.title}
+          subheader={calculateOutputTime()}
+        />
+        <CardMedia
+          component='img'
+          height='194'
+          image='https://mui.com/static/images/cards/paella.jpg'
+          alt={food.title}
+        />
         <CardContent>
-          <Typography sx={{ marginBottom: 2 }}>Ingredients:</Typography>
-          {food.ingredients.map((ingredient) => {
-            let output =
-              ingredient.amount === 'sprinkle'
-                ? `     ${ingredient.ingredient}`
-                : `${ingredient.amount} ${ingredient.ingredient}`;
-            return <Typography sx={{ marginBottom: 2 }}>{output} </Typography>;
-          })}
-
-          <Typography sx={{ marginBottom: 2 }}>Instructions:</Typography>
-          <Typography sx={{ marginBottom: 2 }}>{food.instructions}</Typography>
+          <Typography variant='body2' sx={{ color: 'text.secondary' }}>
+            {food.preview}
+          </Typography>
         </CardContent>
-      </Collapse>
-    </Card>
+        <CardActions disableSpacing>
+          <IconButton aria-label='add to favorites'>
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label='share'>
+            <ShareIcon />
+          </IconButton>
+
+          <ExpandMore
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label='show more'
+          >
+            <ExpandMoreIcon />
+          </ExpandMore>
+        </CardActions>
+        <Collapse in={expanded} timeout='auto' unmountOnExit>
+          <CardContent>
+            <Typography sx={{ marginBottom: 2 }}>Ingredients:</Typography>
+            {food.ingredients.map((ingredient) => {
+              let output =
+                ingredient.amount === 'sprinkle'
+                  ? `     ${ingredient.ingredient}`
+                  : `${ingredient.amount} ${ingredient.ingredient}`;
+              return (
+                <Typography sx={{ marginBottom: 2 }}>{output} </Typography>
+              );
+            })}
+
+            <Typography sx={{ marginBottom: 2 }}>Instructions:</Typography>
+            <Typography sx={{ marginBottom: 2 }}>
+              {food.instructions}
+            </Typography>
+          </CardContent>
+        </Collapse>
+      </Card>
+    </div>
   );
 };
