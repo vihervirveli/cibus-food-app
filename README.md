@@ -1,6 +1,6 @@
 # cibus-food-app
 
-Recipe App using React+Typescript
+Recipe App using React + Typescript + Material UI
 
 ## Progress
 
