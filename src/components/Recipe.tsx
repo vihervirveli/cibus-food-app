@@ -15,6 +15,7 @@ import Avatar from '@mui/material/Avatar';
 import { styled } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
+import { IngredientTable } from './IngredientTable';
 interface RecipeProps {
   food: RecipeType;
   // expand: boolean;
@@ -108,17 +109,10 @@ export const Recipe: React.FC<RecipeProps> = ({ food }) => {
         <Collapse in={expanded} timeout='auto' unmountOnExit>
           <CardContent>
             <Typography sx={{ marginBottom: 2 }}>Ingredients:</Typography>
-            {food.ingredients.map((ingredient) => {
-              let output =
-                ingredient.amount === 'sprinkle'
-                  ? `     ${ingredient.ingredient}`
-                  : `${ingredient.amount} ${ingredient.ingredient}`;
-              return (
-                <Typography sx={{ marginBottom: 2 }}>{output} </Typography>
-              );
-            })}
-
-            <Typography sx={{ marginBottom: 2 }}>Instructions:</Typography>
+            <IngredientTable ingredients={food.ingredients} />
+            <Typography sx={{ marginBottom: 2, marginTop: 2 }}>
+              Instructions:
+            </Typography>
             <Typography sx={{ marginBottom: 2 }}>
               {food.instructions}
             </Typography>

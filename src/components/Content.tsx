@@ -1,6 +1,7 @@
 import React from 'react';
 import { RecipeList } from './RecipeList';
 import { RecipeType } from '../models/models';
+import { Container } from '@mui/material';
 
 export const Content = () => {
   const foods: RecipeType[] = [
@@ -66,8 +67,8 @@ export const Content = () => {
   ];
 
   return (
-    <div className='content'>
+    <Container className='content'>
       <RecipeList foods={foods} />
-    </div>
+    </Container>
   );
 };

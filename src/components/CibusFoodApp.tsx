@@ -2,12 +2,13 @@ import React from 'react';
 
 import { Content } from './Content';
 import { Banner } from './Banner';
+import { Container } from '@mui/material';
 
 export const CibusFoodApp = () => {
   return (
-    <div className="cibus-food-app">
+    <Container className='cibus-food-app' maxWidth={false}>
       <Banner />
       <Content />
-    </div>
+    </Container>
   );
 };

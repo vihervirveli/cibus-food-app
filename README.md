@@ -4,6 +4,14 @@ Recipe App using React+Typescript
 
 ## Progress
 
+### March 23, 2025
+
+Fixed all recipes opening when one does. Added an ingredient table to Card. Added containers
+
+![4A](src/screenshots/4ProgressA.png)
+
+![4B](src/screenshots/4ProgressB.png)
+
 ### March 21, 2025
 
 Switched to using Material UI

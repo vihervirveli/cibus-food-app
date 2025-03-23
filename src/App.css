@@ -14,9 +14,10 @@
 
 .content {
   background-color: #364652;
-  height: 800px;
+  min-height: 900px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 20px;
 }
 
 .recipe-list {
@@ -25,7 +26,7 @@
 
 .recipe-list-content {
   background-color: #bfb1c1;
-  width: 90%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 10px;
@@ -38,37 +39,7 @@
 
 .recipe-container {
   height: 100%;
-}
-
-.recipe {
-  background-color: #c7dbe6;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-  border: #282c34;
-  padding: 10px;
-  border-radius: 15px;
-  filter: drop-shadow(10px 5px 4px rgb(70, 69, 69));
-}
-
-.recipe-title {
-  color: #30383d;
-}
-
-.recipe-preview {
-  display: grid;
-  grid-template-columns: 80% 1fr;
-}
-
-.recipe-preview-info div {
-  text-align: left;
-}
-
-.recipe-preview-pic {
-  width: 40px;
-  height: 40px;
-  background-color: rgb(84, 90, 90);
+  margin: 5px 10px;
 }
 
 /* pad styles */
