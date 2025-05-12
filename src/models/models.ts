@@ -12,4 +12,5 @@ export type RecipeType = {
   instructions: string;
   ratings: number;
   tags: string[];
+  img: string;
 };

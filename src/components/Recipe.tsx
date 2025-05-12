@@ -81,7 +81,7 @@ export const Recipe: React.FC<RecipeProps> = ({ food }) => {
         <CardMedia
           component='img'
           height='194'
-          image='https://mui.com/static/images/cards/paella.jpg'
+          image={food.img}
           alt={food.title}
         />
         <CardContent>

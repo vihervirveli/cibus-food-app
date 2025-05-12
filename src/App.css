@@ -6,32 +6,30 @@
 
 .cibus-food-app {
   background-color: #b5bec6;
+  padding-top: 5px;
 }
 
 .banner {
   padding: 10px 0;
-}
+  margin: 10px 0;
+  color: rgb(199, 195, 195);
 
-.content {
   background-color: #364652;
-  min-height: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 20px;
 }
 
 .recipe-list {
-  padding-top: 20px;
+  background-color: #364652;
+  padding: 10px 0;
+  width: 100%;
 }
 
 .recipe-list-content {
   background-color: #bfb1c1;
-  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 10px;
   padding-bottom: 20px;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .recipe-list-title {
   padding-bottom: 20px;
@@ -39,7 +37,7 @@
 
 .recipe-container {
   height: 100%;
-  margin: 5px 10px;
+  margin: 10px 10px;
 }
 
 /* pad styles */

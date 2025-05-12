@@ -4,6 +4,12 @@ Recipe App using React + Typescript + Material UI
 
 ## Progress
 
+### May 12th, 2025
+
+Fixed the layout so the recipes spread out better without leaving unnecessary space on the edges.
+
+Used real pictures, improved banner.
+
 ### March 23, 2025
 
 Fixed all recipes opening when one does. Added an ingredient table to Card. Added containers
