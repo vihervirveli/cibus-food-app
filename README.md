@@ -10,6 +10,8 @@ Fixed the layout so the recipes spread out better without leaving unnecessary sp
 
 Used real pictures, improved banner.
 
+![5Progress](src/screenshots/5Progress.png)
+
 ### March 23, 2025
 
 Fixed all recipes opening when one does. Added an ingredient table to Card. Added containers
