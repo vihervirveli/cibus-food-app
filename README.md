@@ -4,6 +4,20 @@ Recipe App using React + Typescript + Material UI
 
 ## Progress
 
+### June 5th, 2025
+
+Removed banner, replaced it with an appbar
+
+![Up](src/screenshots/6ProgressUp.png)
+
+Left nav
+
+![Left](src/screenshots/6Progress.png)
+
+Right nav
+
+![Right](src/screenshots/6ProgressB.png)
+
 ### May 12th, 2025
 
 Fixed the layout so the recipes spread out better without leaving unnecessary space on the edges.
