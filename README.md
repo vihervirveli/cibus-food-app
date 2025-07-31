@@ -4,6 +4,16 @@ Recipe App using React + Typescript + Material UI
 
 ## Progress
 
+### July 31st, 2025
+
+After some break on the subject, I'm back at it.
+
+This time I added react-router-dom to the project.
+
+![Routes](src/screenshots/7ProgressA.png)
+
+![New look](src/screenshots/7ProgressB.png)
+
 ### June 5th, 2025
 
 Removed banner, replaced it with an appbar
