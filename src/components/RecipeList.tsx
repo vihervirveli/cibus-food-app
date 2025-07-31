@@ -2,12 +2,9 @@ import React from 'react';
 import { RecipeType } from '../models/models';
 import { Recipe } from './Recipe';
 import { Container } from '@mui/material';
+import foods from '../data/data';
 
-interface RecipeListProps {
-  foods: RecipeType[];
-}
-
-export const RecipeList: React.FC<RecipeListProps> = ({ foods }) => {
+export const RecipeList: React.FC = () => {
   return (
     <Container className='recipe-list'>
       <div className='recipe-list-content'>

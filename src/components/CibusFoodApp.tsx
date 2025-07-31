@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Content } from './Content';
-import { Banner } from './Banner';
 import Box from '@mui/material/Box';
 import { Container } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
@@ -15,7 +13,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import Avatar from '@mui/material/Avatar';
 const pages = ['Recipes', 'Calories', 'Misc'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Profile', 'Account', 'Logout'];
 export const CibusFoodApp = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -157,7 +155,6 @@ export const CibusFoodApp = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <Content />
     </Container>
   );
 };
