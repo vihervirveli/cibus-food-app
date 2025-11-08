@@ -4,6 +4,10 @@ Recipe App using React + Typescript + Material UI
 
 ## Progress
 
+### November 8, 2025
+
+Attaching spring boot to this project
+
 ### July 31st, 2025
 
 After some break on the subject, I'm back at it.
