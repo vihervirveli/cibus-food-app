@@ -16,6 +16,7 @@ import { styled } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 import { IngredientTable } from './IngredientTable';
+
 interface RecipeProps {
   food: RecipeType;
   // expand: boolean;
@@ -78,12 +79,12 @@ export const Recipe: React.FC<RecipeProps> = ({ food }) => {
           title={food.title}
           subheader={calculateOutputTime()}
         />
-        <CardMedia
+        {/* <CardMedia
           component='img'
           height='194'
           image={food.img}
           alt={food.title}
-        />
+        /> */}
         <CardContent>
           <Typography variant='body2' sx={{ color: 'text.secondary' }}>
             {food.preview}
@@ -108,10 +109,10 @@ export const Recipe: React.FC<RecipeProps> = ({ food }) => {
         </CardActions>
         <Collapse in={expanded} timeout='auto' unmountOnExit>
           <CardContent>
-            <Typography sx={{ marginBottom: 2 }}>Ingredients:</Typography>
-            <IngredientTable ingredients={food.ingredients} />
+            <Typography sx={{ marginBottom: 2 }}>Ainesosat:</Typography>
+            {/* <IngredientTable ingredients={food.ingredients} /> */}
             <Typography sx={{ marginBottom: 2, marginTop: 2 }}>
-              Instructions:
+              Ohje:
             </Typography>
             <Typography sx={{ marginBottom: 2 }}>
               {food.instructions}

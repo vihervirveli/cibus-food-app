@@ -4,6 +4,12 @@ Recipe App using React + Typescript + Material UI
 
 ## Progress
 
+### November 9, 2025
+
+Added recipes to state
+
+![backend](src/screenshots/backend_included.png)
+
 ### November 8, 2025
 
 Attaching spring boot to this project

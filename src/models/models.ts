@@ -4,13 +4,10 @@ export type RecipeIngredientType = {
 };
 
 export type RecipeType = {
-  index: number;
+  id: number;
   title: string;
   time: number;
   preview: string;
-  ingredients: RecipeIngredientType[];
   instructions: string;
   ratings: number;
-  tags: string[];
-  img: string;
 };
