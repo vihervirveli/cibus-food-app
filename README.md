@@ -4,6 +4,12 @@ Recipe App using React + Typescript + Material UI
 
 ## Progress
 
+### November 10, 2025
+
+Added tags and cleaned up recipe. Next time: move fetching data elsewhere
+
+![tags](src/screenshots/tags.png)
+
 ### November 9, 2025
 
 Added recipes to state

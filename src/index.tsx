@@ -4,7 +4,6 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './pages/Layout';
-import { CibusFoodApp } from './components/CibusFoodApp';
 import { RecipeList } from './components/RecipeList';
 import Sign from './pages/Sign';
 import Misc from './pages/Misc';

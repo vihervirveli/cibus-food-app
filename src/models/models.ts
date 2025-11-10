@@ -11,3 +11,14 @@ export type RecipeType = {
   instructions: string;
   ratings: number;
 };
+
+export type RecipeTagType = {
+  id: number;
+  tagId: number;
+  recipeId: number;
+};
+
+export type TagType = {
+  id: number;
+  tag: string;
+};

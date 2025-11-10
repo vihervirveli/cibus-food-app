@@ -11,7 +11,7 @@ export const RecipeList: React.FC = () => {
     const getData = async () => {
       try {
         const res = await axios.get('http://localhost:8080/v1/recipe/');
-        console.log('GetData succeeded', res.data);
+        console.log('RecipeList GetData succeeded', res.data);
         setRecipes(res.data);
       } catch (error) {
         console.error('Error', error);
@@ -26,7 +26,7 @@ export const RecipeList: React.FC = () => {
         <div className='recipe-list-align'>
           {recipes &&
             recipes.map((recipe) => {
-              return <Recipe food={recipe} key={recipe.id} />;
+              return <Recipe recipe={recipe} key={recipe.id} />;
             })}
         </div>
       </div>

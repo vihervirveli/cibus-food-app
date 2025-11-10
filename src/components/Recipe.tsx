@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { RecipeType } from '../models/models';
+import React, { useEffect, useState } from 'react';
+import { RecipeType, TagType } from '../models/models';
 import { red } from '@mui/material/colors';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -15,10 +15,14 @@ import Avatar from '@mui/material/Avatar';
 import { styled } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
 import { IngredientTable } from './IngredientTable';
+import axios from 'axios';
+import { RecipeTagType } from '../models/models';
 
 interface RecipeProps {
-  food: RecipeType;
+  recipe: RecipeType;
   // expand: boolean;
 }
 
@@ -49,17 +53,47 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   ]
 }));
 
-export const Recipe: React.FC<RecipeProps> = ({ food }) => {
-  const [expanded, setExpanded] = useState(false);
+export const Recipe: React.FC<RecipeProps> = ({ recipe }) => {
+  const [recipeTags, setRecipeTags] = useState<RecipeTagType[] | null>([]);
+  const [tags, setTags] = useState<TagType[] | null>([]);
+  const [expanded, setExpanded] = useState<boolean>(false);
+
+  useEffect(() => {
+    const getRecipeTags = async () => {
+      try {
+        const res = await axios.get('http://localhost:8080/v1/recipetag/');
+        console.log('Recipe GetData succeeded', res.data);
+        let recipeTags = res.data.filter(
+          (recipeTag: RecipeTagType) => recipeTag.recipeId === recipe.id
+        );
+
+        const resTags = await axios.get('http://localhost:8080/v1/tag/');
+        if (recipeTags != null) {
+          const tagIds = recipeTags.map((t: RecipeTagType) => t.tagId);
+          let tags = resTags.data.filter((tag: TagType) =>
+            tagIds.includes(tag.id)
+          );
+          setTags(tags);
+        }
+      } catch (error) {
+        console.error('Error', error);
+      }
+    };
+    getRecipeTags();
+  }, [recipe.id]);
+
+  const handleClick = () => {
+    console.log('You clicked this. Functionality TBA');
+  };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   const calculateOutputTime = () => {
-    if (food.time < 61) return `${food.time} min`;
-    let hours = Math.floor(food.time / 60);
-    let minutes = food.time % 60;
+    if (recipe.time < 61) return `${recipe.time} min`;
+    let hours = Math.floor(recipe.time / 60);
+    let minutes = recipe.time % 60;
     return `${hours} hr ${minutes}min`;
   };
   return (
@@ -76,7 +110,7 @@ export const Recipe: React.FC<RecipeProps> = ({ food }) => {
               <MoreVertIcon />
             </IconButton>
           }
-          title={food.title}
+          title={recipe.title}
           subheader={calculateOutputTime()}
         />
         {/* <CardMedia
@@ -87,7 +121,7 @@ export const Recipe: React.FC<RecipeProps> = ({ food }) => {
         /> */}
         <CardContent>
           <Typography variant='body2' sx={{ color: 'text.secondary' }}>
-            {food.preview}
+            {recipe.preview}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
@@ -115,8 +149,21 @@ export const Recipe: React.FC<RecipeProps> = ({ food }) => {
               Ohje:
             </Typography>
             <Typography sx={{ marginBottom: 2 }}>
-              {food.instructions}
+              {recipe.instructions}
             </Typography>
+            <Stack direction='row' spacing={1}>
+              {tags &&
+                tags.map((tag) => {
+                  return (
+                    <Chip
+                      key={tag.id}
+                      label={tag.tag}
+                      variant='outlined'
+                      onClick={handleClick}
+                    />
+                  );
+                })}
+            </Stack>
           </CardContent>
         </Collapse>
       </Card>
