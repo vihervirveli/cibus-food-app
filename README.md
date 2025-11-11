@@ -4,6 +4,10 @@ Recipe App using React + Typescript + Material UI
 
 ## Progress
 
+### November 11, 2025
+
+Added zod to project, and moved it to hooks/useAxios
+
 ### November 10, 2025
 
 Added tags and cleaned up recipe. Next time: move fetching data elsewhere
