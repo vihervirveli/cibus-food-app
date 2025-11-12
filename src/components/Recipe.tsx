@@ -20,6 +20,8 @@ import Stack from '@mui/material/Stack';
 import { IngredientTable } from './IngredientTable';
 import axios from 'axios';
 import { RecipeTagType } from '../models/models';
+import { fetchDataAll } from '../hooks/useAxios';
+import { RecipeTagTypesSchema, TagTypesSchema } from '../schema/schemas';
 
 interface RecipeProps {
   recipe: RecipeType;
@@ -56,31 +58,39 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 export const Recipe: React.FC<RecipeProps> = ({ recipe }) => {
   const [recipeTags, setRecipeTags] = useState<RecipeTagType[] | null>([]);
   const [tags, setTags] = useState<TagType[] | null>([]);
+  const [currentTags, setCurrentTags] = useState<TagType[] | null>([]);
   const [expanded, setExpanded] = useState<boolean>(false);
 
   useEffect(() => {
     const getRecipeTags = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/v1/recipetag/');
-        console.log('Recipe GetData succeeded', res.data);
-        let recipeTags = res.data.filter(
-          (recipeTag: RecipeTagType) => recipeTag.recipeId === recipe.id
-        );
+        const loadDataRecipeTag = async () => {
+          const recipeTags = await fetchDataAll(
+            '/v1/recipetag/',
+            RecipeTagTypesSchema
+          );
+          setRecipeTags(recipeTags);
+        };
+        loadDataRecipeTag();
+        const loadDataTags = async () => {
+          const tags = await fetchDataAll('/v1/tag/', TagTypesSchema);
+          setTags(tags);
+        };
 
-        const resTags = await axios.get('http://localhost:8080/v1/tag/');
-        if (recipeTags != null) {
+        loadDataTags();
+        if (recipeTags != null && tags != null) {
           const tagIds = recipeTags.map((t: RecipeTagType) => t.tagId);
-          let tags = resTags.data.filter((tag: TagType) =>
+          const currentTags = tags.filter((tag: TagType) =>
             tagIds.includes(tag.id)
           );
-          setTags(tags);
+          setCurrentTags(currentTags);
         }
       } catch (error) {
         console.error('Error', error);
       }
     };
     getRecipeTags();
-  }, [recipe.id]);
+  }, [recipeTags, tags]);
 
   const handleClick = () => {
     console.log('You clicked this. Functionality TBA');
@@ -152,8 +162,8 @@ export const Recipe: React.FC<RecipeProps> = ({ recipe }) => {
               {recipe.instructions}
             </Typography>
             <Stack direction='row' spacing={1}>
-              {tags &&
-                tags.map((tag) => {
+              {currentTags &&
+                currentTags.map((tag) => {
                   return (
                     <Chip
                       key={tag.id}

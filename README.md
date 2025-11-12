@@ -4,6 +4,8 @@ Recipe App using React + Typescript + Material UI
 
 ## Progress
 
+Structured schemas as its own folder and cleaned up recipe
+
 ### November 11, 2025
 
 Added zod to project, and moved it to hooks/useAxios

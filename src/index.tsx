@@ -26,12 +26,5 @@ if (container) {
 } else {
   throw new Error('Root container not found');
 }
-// root.render(
-//   <React.StrictMode>
-//     <BrowserRouter>
-//       <App />
-//     </BrowserRouter>
-//   </React.StrictMode>
-// );
 
 reportWebVitals();
